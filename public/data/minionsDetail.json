@@ -1,0 +1,39 @@
+[  
+   {  
+      "name":"Assassins Creed",
+      "price":12.5,
+      "description":"good minion for desktop",
+      "image":{  
+         "full":"/data/Minion-3D-Assassin.jpg"
+      },
+      "reviews":[  
+         {  
+            "star":4,
+            "quote":"this is cool assassins",
+            "by":"rajes@gmail.coms"
+         }
+      ]
+   },
+   {  
+      "name":"Wolverine",
+      "price":22.4,
+      "description":" good for those who like x men",
+      "image":{  
+         "full":"/data/Minion-3D-X-Men-Wolverine.jpg"
+      },
+      "reviews":[  
+
+      ]
+   },
+   {  
+      "name":"Madara Uchiha",
+      "price":55,
+      "description":"for anime lover",
+      "image":{  
+         "full":"/data/Minion-3D-Madara-Uchiha.jpg"
+      },
+      "reviews":[  
+
+      ]
+   }
+]

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minions Figurehead</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap.css.map">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="/css/style-minions.css">
+</head>
+<body ng-app="Minions">
+   <section>
+       <div class="container" ng-controller="StoreController as store">
+<!--
+           <image ng-src="{{store.product.image.full}}"></image>
+           <h1>{{store.product.name}}</h1>
+           <h3>{{store.product.price | currency}}</h3>
+           
+-->
+          <ul class="list-group" >
+              <li class="list-group-item" ng-repeat = "product in store.products">
+               <product-title></product-title>
+               <product-gallery></product-gallery>
+
+<!--
+               <h4 class="btn btn-default" ng-click="tab = !tab">
+                   Description
+                   </h4>
+                   <p ng-show="tab==1">{{product.description}}</p>
+               
+-->
+              
+               <ul class = "nav nav-pills" >
+                   <li><a href="" ng-click="tab = 1">Desciption</a></li>
+                   <li><a href="" ng-click="tab = 2 ">Review</a></li>
+               </ul>
+                
+               <div class="panel" ng-show = "tab == 1">
+                   <blockquote>descriptionss</blockquote>
+               </div>
+               <div class="panel"  ng-show = "tab == 2" >
+                   <blockquote ng-repeat="review in product.reviews">
+                       <b>{{review.star}}Stars</b>
+                       <p>{{review.quote}}</p>
+                       -by <cite>{{review.by}}</cite>
+                   </blockquote>
+                   
+                                                                
+                   <div ng-controller="ReviewController as reviewCtrl">
+                   <form name="reviewform" ng-submit="reviewCtrl.productReview(product)">
+                       <blockquote>
+                        <b>Star: {{reviewCtrl.review.star}}</b>
+                        <p>{{reviewCtrl.review.quote}}</p>
+                         - <cite>{{reviewCtrl.review.by}}</cite>
+                       </blockquote>
+                       
+                       <select name="" id="" ng-model="reviewCtrl.review.star" class="select">
+                           <option value="5">5 star</option>
+                           <option value="4">4 star</option>
+                           <option value="3">3 star</option>
+                           <option value="2">2 star</option>
+                           <option value="1">1 star</option>
+                       </select>
+                       <hr>
+                       <br>
+                       <div class="form-group" >                       
+                       <textarea name="" id="" cols="40" rows="3" ng-model ="reviewCtrl.review.quote" class="form-control" placeholder="Write something which you want to say about the  product"></textarea>
+                       </div>
+                       <hr>
+                       <div class="form-group">
+                       <input type="email" ng-model="reviewCtrl.review.by" placeholder="example@gmail.com" class="form-control">
+                       </div>
+                       <hr>
+                       <input type="submit" value="submit" class="btn btn-reverse">
+                       
+                   </form>
+                   </div>
+               </div>
+                
+              </li>
+<!--              <li ng-repeat = "product in store.products"></li>-->
+<!--              <li ng-repeat = "product in store.products"></li>-->
+              
+              
+          </ul>
+           
+       </div>
+   </section>
+   
+   <section>
+      <h2>this is a cart section</h2>
+       <cart-addition>
+           
+       </cart-addition>
+   </section>
+   
+<!--   js files -->
+   
+   <script src="/js/jquery-3.1.1.js"></script>
+   <script src = "/js/bootstrap.min.js"></script>
+   <script src = "/js/angular.min.js"></script>
+   <script src="js/angular-route.js"></script>
+   <script src = "/js/despicableMefigures.js"></script>
+   <script src ="/js/product.js"></script>
+    
+</body>
+</html>
